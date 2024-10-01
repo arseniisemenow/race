@@ -25,10 +25,14 @@ func SignalAction(signal Signal, game *CarRacingGame) {
 			ActionMoveUp(game)
 		case KSignalMoveDown:
 			ActionMoveDown(game)
+		case KSignalPause:
+			ActionPause(game)
 		}
 		HandleTime(game)
 	case KCollide:
 		ActionCollide(game)
+	case KPause:
+		ActionUnPause(game)
 	case KGameOver:
 		ActionGameOver(game)
 	}

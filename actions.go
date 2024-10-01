@@ -53,6 +53,8 @@ func ActionExitState(game *CarRacingGame) {
 }
 
 func ActionPause(game *CarRacingGame) {
-	fmt.Println("Game is paused...")
 	game.State = KPause
+}
+func ActionUnPause(game *CarRacingGame) {
+	game.State = KMoving
 }
