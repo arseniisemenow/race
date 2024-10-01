@@ -35,6 +35,7 @@ type Car struct {
 type CarRacingGame struct {
 	State         State  `json:"state_car_racing"`
 	Score         int    `json:"score"`
+	Level         int    `json:"level"`
 	RecordsScore  int    `json:"record_score"`
 	Player        Car    `json:"player_car_racing"`
 	RivalCars     [2]Car `json:"rival_cars"`

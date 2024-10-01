@@ -1,6 +1,8 @@
 package race
 
-import "math/rand"
+import (
+	"math/rand"
+)
 
 func MoveObstacleCarUpward(car *Car, y int) {
 	car.Lane = rand.Intn(3)
@@ -29,6 +31,12 @@ func HandleScoreForOvertake(game *CarRacingGame, i int) {
 	if game.RivalCars[i].Y == game.Player.Y {
 		game.Score++
 	}
+	UpdateLevel(game)
+}
+
+func UpdateLevel(game *CarRacingGame) {
+	game.Level = (game.Score / 5) + 1
+	game.TimeStep = int64(200 - ((game.Level - 1) * 15))
 }
 
 func CheckForCollision(game *CarRacingGame) {
