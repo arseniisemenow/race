@@ -2,7 +2,6 @@ package race
 
 import "fmt"
 
-// Visual representation of the game track
 func PrintTrack(game *CarRacingGame) {
 	track := make([][]rune, game.TrackHeight)
 	for i := range track {

@@ -4,10 +4,6 @@ import (
 	"fmt"
 )
 
-func GetUserInput(code int) Signal {
-	return Signal(code)
-}
-
 func ActionMoveUp(game *CarRacingGame) {
 	if game.Player.Y > 0 {
 		game.Player.Y--
@@ -36,7 +32,7 @@ func ActionSpawn(game *CarRacingGame) {
 	game.Player.Y = game.TrackHeight - 1
 	game.Player.Lane = 1
 	for i := 0; i < 2; i++ {
-		MoveCarUpward(&game.RivalCars[i], i*3)
+		MoveObstacleCarUpward(&game.RivalCars[i], i*3)
 	}
 }
 

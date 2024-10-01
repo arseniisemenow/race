@@ -28,15 +28,18 @@ const (
 )
 
 type Car struct {
-	Lane int `json:"lane"` // Lane position (0, 1, or 2)
-	Y    int `json:"y"`    // Vertical position on the track
+	Lane int `json:"lane"`
+	Y    int `json:"y"`
 }
 
 type CarRacingGame struct {
 	State         State  `json:"state_car_racing"`
+	Score         int    `json:"score"`
+	RecordsScore  int    `json:"record_score"`
 	Player        Car    `json:"player_car_racing"`
 	RivalCars     [2]Car `json:"rival_cars"`
 	TrackHeight   int    `json:"track_height"`
+	TrackWidth    int    `json:"track_width"`
 	TimeStep      int64  `json:"time_step"`
 	LastMovedTime int64  `json:"last_moved_time"`
 }
@@ -44,10 +47,12 @@ type CarRacingGame struct {
 func NewCarRacingGame() *CarRacingGame {
 	return &CarRacingGame{
 		State:         KStart,
+		Score:         0,
 		Player:        Car{Lane: 1, Y: 10},
 		RivalCars:     [2]Car{{Lane: 0, Y: 0}, {Lane: 0, Y: 0}},
 		TrackHeight:   20,
-		TimeStep:      500, // Time step in milliseconds for obstacle movement
+		TrackWidth:    10,
+		TimeStep:      200,
 		LastMovedTime: time.Now().UnixMilli(),
 	}
 }
