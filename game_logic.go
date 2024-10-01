@@ -31,12 +31,18 @@ func HandleScoreForOvertake(game *CarRacingGame, i int) {
 	if game.RivalCars[i].Y == game.Player.Y {
 		game.Score++
 	}
+	if game.Score > game.RecordsScore {
+		game.RecordsScore = game.Score
+	}
 	UpdateLevel(game)
 }
 
 func UpdateLevel(game *CarRacingGame) {
 	game.Level = (game.Score / 5) + 1
-	game.TimeStep = int64(200 - ((game.Level - 1) * 15))
+	if game.Level > 10 {
+		game.Level = 10
+	}
+	game.TimeStep = int64(200 - ((game.Level - 1) * 17))
 }
 
 func CheckForCollision(game *CarRacingGame) {
