@@ -51,7 +51,3 @@ func NewCarRacingGame() *CarRacingGame {
 		LastMovedTime: time.Now().UnixMilli(),
 	}
 }
-
-func InitParametersCarRacing() {
-	Parameters = NewCarRacingGame()
-}

@@ -4,8 +4,6 @@ import (
 	"fmt"
 )
 
-var Parameters *CarRacingGame
-
 // SignalAction processes a signal and performs the corresponding action
 func SignalAction(signal Signal, game *CarRacingGame) {
 	switch game.State {
