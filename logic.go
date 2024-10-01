@@ -1,4 +1,4 @@
-package carracing
+package race
 
 import "math/rand"
 
