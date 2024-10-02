@@ -25,3 +25,7 @@ func main() {
 
 ```
 
+#### Finite State Machine (FSM) Diagram
+![fsm.png](fsm.png)
+
+
